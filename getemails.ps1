@@ -11,7 +11,7 @@ Write-Host "============================== Checking $($domain) in Hunter =======
 
 
 $hunter = Invoke-RestMethod -Method Get "https://api.hunter.io/v2/domain-search?domain=$($domain)&api_key=$($apikey)" 
-#$hunter = Get-Content jq | ConvertFrom-Json
+
 
 foreach ($email in $hunter.data.emails){
     Write-Host "Checkin e-mail: $($email.value)"
